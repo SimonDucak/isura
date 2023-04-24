@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Isura",
+    "description": "Enhance your chat experience with ChatGPT Assistant! Get real-time AI-powered suggestions as you type in the chat input field, making your conversations more engaging and accurate.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup.html",
+        "my_custom_key": "chat_gpt_assistant"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icons/favicon-16x16.png",
+        "32": "icons/favicon-32x32.png",
+        "150": "icons/mstile-150x150.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "dist/content_script.js"
+            ]
+        }
+    ]
+}
